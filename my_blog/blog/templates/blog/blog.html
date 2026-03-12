@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "blog/blog.css"%}">
+{%endblock%}
+{% block content %}
+<div class="blog-container">
+    <hr>
+    <h2>{{blog.title}}</h2>
+    <h5>{{blog.created_at}}</h5>
+    <p class="entry">{{blog.entry}}</p>
+    <hr>
+    <br>
+    <a href="/blogs">Back to Blogs</a>
+<div>
+{% endblock %}
