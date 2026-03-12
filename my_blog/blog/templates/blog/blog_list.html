@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "blog/blog.css"%}">
+{%endblock%}
+
+{% block content %}
+    
+<div class="all-blogs-container">
+        {% for blog in blogs %}
+                <div class="blog-card">
+                            <h3>{{ blog.title }}</h3>
+                            <p>{{ blog.description }}</p>
+                            <p>{{ blog.created_at }}</p>
+                    <form action="{% url "blog" blog.id%}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">View</button>
+                    </form>
+                </div>
+        {% endfor %}
+</div>
+{% endblock %}

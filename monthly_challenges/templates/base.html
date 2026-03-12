@@ -1,21 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Challenges{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "styles.css"%}">
+    {% block css %}{%endblock%}
     <style>
         {% block styles %}
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
         .container {
             max-width: 1000px;
             margin: 0 auto;

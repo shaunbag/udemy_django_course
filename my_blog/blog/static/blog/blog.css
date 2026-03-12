@@ -1,0 +1,41 @@
+.landing-blog-container, .all-blogs-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-blogs-container ul{
+    list-style: none;
+    list-style-position: inside;
+}
+
+.landing-blog-card, .blog-card{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px rgb(54, 126, 102) solid;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px ;
+    margin: 30px;
+}
+.blog-container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.blog-container h2, h5  {
+    text-align: center;
+}
+.entry{
+    white-space: pre-wrap;
+    width: 80%;
+    align-self: center;
+}
+
+hr{
+    background-color: black;
+}
