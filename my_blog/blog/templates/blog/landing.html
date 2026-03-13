@@ -5,7 +5,13 @@
 {%endblock%}
 {% block content %}
 
-    <div class="landing-blog-container">
+    <header class="landing-header">
+        <h1>Welcome to My Blog</h1>
+        <p>I’m a firm believer that the best way to recharge from a week of screen time is a long hike and a solid playlist. 
+            Here, you’ll find my latest tech deep-dives, album recommendations, and stories from the trail.</p>
+    </header>
+
+    <section class="landing-blog-container">
         {% for blog in blogs %}
             <div class="landing-blog-card">
                 <h3>{{blog.title}}</h3>
@@ -17,6 +23,6 @@
                 </form>
             </div>
         {% endfor %}
-    </div>
+    </section>
 
 {% endblock %}

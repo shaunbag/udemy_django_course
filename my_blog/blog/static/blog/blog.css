@@ -1,9 +1,19 @@
+.landing-header{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+}
+.landing-header p {
+    max-width: 1000px;
+    text-align: center;
+}
 .landing-blog-container, .all-blogs-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    align-items: center;
 }
 
 .all-blogs-container ul{
@@ -22,12 +32,18 @@
     box-shadow: 5px 5px 5px ;
     margin: 30px;
 }
+
+.landing-blog-card:hover, .blog-card:hover{
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
 .blog-container{
     display: flex;
     flex-direction: column;
     align-self: center;
 }
-.blog-container h2, h5  {
+.blog-container h2, h5, a  {
     text-align: center;
 }
 .entry{
