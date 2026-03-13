@@ -6,7 +6,7 @@
 
 {% block content %}
     
-<div class="all-blogs-container">
+<section class="all-blogs-container">
         {% for blog in blogs %}
                 <div class="blog-card">
                             <h3>{{ blog.title }}</h3>
@@ -18,5 +18,5 @@
                     </form>
                 </div>
         {% endfor %}
-</div>
+</section>
 {% endblock %}

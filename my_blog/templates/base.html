@@ -1,33 +1,31 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
     {% block css %}{%endblock%}
-    <style>
-        {% block styles %}
-        body {
-           margin: 0;
-           padding: 0;
-        }
-        nav{
-            display: flex;
-            justify-content: space-between;
-            background-color: rgba(39, 39, 39, 0.2);
-            margin: 0;
-            padding: 10px;
-        }
-        {% endblock %}
-    </style>
+   
 </head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        <h1>My Blogs</h1>
+        <div class="logo">
+            <a href="/"><img class="logo-img"  src="{% static 'images/me.JPG' %}" width="50px"></a>
+        </div>
+        
+       
         <a href="/blogs">All Blogs</a>
     </nav>
+    <main>
     {% block content %}
     {% endblock %}
+    </main>
+    <footer class="footer" >
+        <p>&copy; {{ current_year }} My Blog. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
