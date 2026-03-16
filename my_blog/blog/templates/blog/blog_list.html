@@ -9,10 +9,11 @@
 <section class="all-blogs-container">
         {% for blog in blogs %}
                 <div class="blog-card">
+                    <img src="{{ blog.image }}" alt="{{ blog.title }} image" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;">
                             <h3>{{ blog.title }}</h3>
                             <p>{{ blog.description }}</p>
                             <p>{{ blog.created_at }}</p>
-                    <form action="{% url "blog" blog.id %}">
+                    <form action="{% url "blog" blog.slug %}">
                         {% csrf_token %}
                         <button type="submit">View</button>
                     </form>

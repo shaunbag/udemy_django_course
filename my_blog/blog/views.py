@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Blog
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.cache import cache_control
+from django.http import HttpResponseNotFound
 
 # Create your views here.
 
@@ -23,8 +24,11 @@ def blog_list_view(request):
 
 @cache_control(max_age=300)
 @require_http_methods(["GET"])
-def blog(request, blog_id):
-    blog = get_object_or_404(Blog, id=blog_id)
+def blog(request, slug):
+    blog = get_object_or_404(Blog, slug=slug)
     template = "blog/blog.html"
-    return render(request, template, { "blog": blog})
+    if not blog:
+        return HttpResponseNotFound(render(request, "404.html"))
+    else:
+        return render(request, template, { "blog": blog})
     
